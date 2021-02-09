@@ -142,4 +142,36 @@ elif card:
     print("택시를 타고 가라")
 else:
     print("걸어 가라")
-# 
+# elif는 개수에 제한 없이 사용할 수 있다.
+
+# if문을 한 줄로 작성하기
+# 앞의 passㄹ르 사용한 예를 보면 if문 다음에 수행할 문장이 한 줄이고, else문 다음에 수행할 문장도 한 줄 밖에 되지 않는다.
+if 'money' in poket:
+    pass
+else:
+    print("카드를 꺼내라")
+# 이렇게 수행할 문장이 한 줄일 때, 조금 더 간략하게 코드를 작성하는 방법이 있다.
+poket = ['paper', 'money', 'cellphone']
+if 'money' in poket: pass
+else: print("카드를 꺼내라")
+# if문 다음 수행할 문장을 콜론(:) 뒤에 바로 적어 주었다. else문 역시 마찬가지이다.
+
+
+
+### 조건부 표현식
+# 다음과 같은 코드를 보자
+score = 59
+if score >= 60:
+    message = "success"
+    print(message)
+else:
+    message = "failure"
+    print(message)
+# 위 코드는 score가 60 이상일 경우 messgae에 문자열 "success"를, 아닐 경우에는 "failure"를 대입하는 코드이다.
+# 파이썬의 조건부 표현식(conditional expression)을 사용하면 위 코드를 다음과 같이 간단히 표현할 수 있다.
+score = 60
+message = "success" if score >= 60 else "failure" print()
+# 조건부 표현식은 다음과 같이 정의한다.
+# "조건문이 참인 경우" if "조건문" else "조건문이 거짓인 경우"
+# 조건부 표현식은 가독성이 유리하고 한 줄로 작성할 수 있어 활용성이 좋다.
+
