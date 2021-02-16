@@ -157,10 +157,14 @@ f = open("foo.txt", 'w')
 f.write("Life is too short, you need python")
 f.close()
 """
-# 파일을 열면 위와 같이 항상 close 해 주느 ㄴ거싱 좋다. 하지만 이렇게 파일을 열고 닫는 것을 자동으로 처리할 수 있다면 편리하지 않을까?
+# 파일을 열면 위와 같이 항상 close 해 주는게 좋다. 하지만 이렇게 파일을 열고 닫는 것을 자동으로 처리할 수 있다면 편리하지 않을까?
 # 파이썬의 with문이 바로 이런 역할을 해준다. 다음 예는 with문을 사용해서 위 예제를 다시 작성한 모습이다.
 """
 with open("foo.txt", "w") as f:
     f.write("Life is too short, you need python")
 """
 # 위와 같이 with문을 사용하면 with 블록을 벗어나는 순간 열린 파일 객체 f가 자동으로 close되어 편리하다.
+
+
+
+
