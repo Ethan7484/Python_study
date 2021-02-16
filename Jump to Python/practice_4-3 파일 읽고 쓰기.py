@@ -108,14 +108,28 @@ while 1:
 readlines 함수 사용하기
 """
 # 두 번째 방법은 readline 함수를 사용하는 방법이다. 다음 예를 보자.
+"""
 f = open("새파일.txt", 'r')
 lines = f.readlines()
 for line in lines:
     print(line)
 f.close()
+"""
 # readlines 함수는 파일의 모든 줄을 읽어서 각각의 줄을 요소로 갖는 리스트로 돌려준다.
 # 따라서 위 예에서 lines는 리스트 "["1번째 줄입니다.", "2번째 줄입니다." ....]"가 된다.
 # f.readlines()에서 f.readline()과 달리 s가 하나 더 붙어 있음에 유의하자.
+
+"""
+read 함수 사용하기
+"""
+# 세번째 방법은 read함수를 사용하는 방법이다. 다음 예를 보자.
+"""
+f = open("새파일.txt", 'r')
+data = f.read()
+print(data)
+f.close()
+"""
+# "f.read()"는 파일의 내용 전체를 문자열로 돌려준다. 따라서 위 예의 data는 파일의 전체 내용이다.
 
 
 
@@ -123,4 +137,30 @@ f.close()
 # 쓰기 모드('w')로 파일을 열 때 이미 존재하는 파일을 열면 그 파이르이 내용이 모두 사라지게 된다.
 # 하지만 운래 있던 값을 유지하면서 단지 새로운 값만 추가해야 할 경우도 있다. 이런 경우에는 파일을 추가 모드('a')로 열면 된다.
 # 에디터를 켜고 다음 소스 코드를 작성해 보자.
+"""
+# adddata.py
+f = open("새파일.txt", 'a')
+for i in range(11, 20):
+    data = "%d번째 줄입니다. \n" % i
+    f.write(data)
+f.close()
+"""
+# 위 예는 새파일.txt 파일으 추가 모드('a')로 열고 write를 사용해서 결괏값을 기존 파일에 추가해 적는 예이다.
+# 여기에서 추가 모드로 파일을 열었기 때문에 새파일.txt 파일이 원래 가지고 있던 내용 바로 다음부터 결괏값을 적기 시작한다.
 
+
+
+### with문과 함께 사용하기
+# 지금까지 살펴본 예제를 보면 항상 다음과 같은 방식으로 파일을 열고 닫아 왔다.
+"""
+f = open("foo.txt", 'w')
+f.write("Life is too short, you need python")
+f.close()
+"""
+# 파일을 열면 위와 같이 항상 close 해 주느 ㄴ거싱 좋다. 하지만 이렇게 파일을 열고 닫는 것을 자동으로 처리할 수 있다면 편리하지 않을까?
+# 파이썬의 with문이 바로 이런 역할을 해준다. 다음 예는 with문을 사용해서 위 예제를 다시 작성한 모습이다.
+"""
+with open("foo.txt", "w") as f:
+    f.write("Life is too short, you need python")
+"""
+# 위와 같이 with문을 사용하면 with 블록을 벗어나는 순간 열린 파일 객체 f가 자동으로 close되어 편리하다.
