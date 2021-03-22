@@ -212,3 +212,41 @@ print(a)    # 1616377837.8341794    현재 시간이 '초'단위로 출력된 �
 
 # 2. time.localtime
 # time.localtime은 time.time()이 돌려준 실수 값을 사용해도 "연도, 월, 일, 시 분, 초" 의 형태로 바꾸어 주는 함수이다. 
+"""
+import time
+a = time.localtime(time.time())
+print(a)    # time.struct_time(tm_year=2021, tm_mon=3, tm_mday=22, tm_hour=11, tm_min=12, tm_sec=9, tm_wday=0, tm_yday=81, tm_isdst=0) 돌려줌
+"""
+
+# 3. time.asctime
+# 위 time.localtime에 의해서 반환된 튜플 형태의 값을 인수로 받아서 날짜와 시간을 알아보기 쉬운 형태로 돌려주는 함수이다.
+
+"""
+import time
+a = time.asctime(time.localtime(time.time()))
+print(a)    # Mon Mar 22 11:14:24 2021, "요일 / 월 / 날짜 / 시간 / 연도"순으로 출력됨
+"""
+
+
+# 4. time.ctime
+# time.asctime(time.localtime(time.time()))은 time.ctime()을 사용해 간편하게 표시할 수 있다. asctime과 다른 점은 ctime은 항상 현재 시간만 돌려준다는 점이다. 
+
+"""
+import time
+a = time.ctime()
+print(a)    # 현재 시간을 돌려준다. Mon Mar 22 11:59:32 2021
+"""
+
+
+# 5. time.strftime
+# time.strftime('출력할 형식 포맷 코드', time.localtime(time.time()))
+# strftime 함수는 시간에 관계된 것을 세밀하게 표현하는 여러 가지 포맷 코드를 제공한다.
+
+import time
+# 요일 줄임말
+a = time.strftime('%a', time.localtime(time.time()))
+print(a)
+
+# 요일 줄임말
+a = time.strftime('%a', time.localtime(time.time()))
+print(a)
