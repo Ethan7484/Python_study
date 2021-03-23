@@ -242,11 +242,167 @@ print(a)    # 현재 시간을 돌려준다. Mon Mar 22 11:59:32 2021
 # time.strftime('출력할 형식 포맷 코드', time.localtime(time.time()))
 # strftime 함수는 시간에 관계된 것을 세밀하게 표현하는 여러 가지 포맷 코드를 제공한다.
 
+"""
 import time
 # 요일 줄임말
 a = time.strftime('%a', time.localtime(time.time()))
-print(a)
+print(a)    # Tue
+ 
+# 요일
+a = time.strftime('%A', time.localtime(time.time()))
+print(a)    # Tuesday
 
-# 요일 줄임말
-a = time.strftime('%a', time.localtime(time.time()))
-print(a)
+# 달 줄임말
+a = time.strftime('%b', time.localtime(time.time()))
+print(a)    # Mar
+
+# 달
+a = time.strftime('%B', time.localtime(time.time()))
+print(a)    # March
+
+# 날짜와 시간을 출력함
+a = time.strftime('%c', time.localtime(time.time()))
+print(a)    # Tue Mar 23 08:53:35 2021
+
+# 날(day)
+a = time.strftime('%d', time.localtime(time.time()))
+print(a)    # 23일
+
+# 시간(Hour) - 24시간 출력 형태
+a = time.strftime('%H', time.localtime(time.time()))
+print(a)    # 08
+
+# 시간(Hour) - 12시간 출력 형태
+a = time.strftime('%I', time.localtime(time.time()))
+print(a)    # 08
+
+# 1년 중 누적 날짜
+a = time.strftime('%j', time.localtime(time.time()))
+print(a)    # 082
+
+# 달
+a = time.strftime('%m', time.localtime(time.time()))
+print(a)    # 03
+
+# 분
+a = time.strftime('%M', time.localtime(time.time()))
+print(a)    # 58
+
+# AM or PM
+a = time.strftime('%p', time.localtime(time.time()))
+print(a)    # AM
+
+# 초
+a = time.strftime('%S', time.localtime(time.time()))
+print(a)    # 58
+
+# %U - 1년 중 누적 주 (일요일을 시작으로)
+a = time.strftime('%U', time.localtime(time.time()))
+print(a)    # 12
+
+# %w - 숫자로된 요일 [0(일요일), 6(토요일)]
+a = time.strftime('%w', time.localtime(time.time()))
+print(a)    # 2(화요일)
+
+# %W - 1년 중 누적 주 - 월요일을 시작으로 
+a = time.strftime('%W', time.localtime(time.time()))
+print(a)    # 12
+
+# %x - 현재 설정된 로케일에 기반된 날짜 출력
+a = time.strftime('%M', time.localtime(time.time()))
+print(a)    # 58
+
+# %X - 현재 설정된 로케일에 기반한 시간 출력
+a = time.strftime('%X', time.localtime(time.time()))
+print(a)    # 09:10:59
+
+# %Y - 년도 출력
+a = time.strftime('%Y', time.localtime(time.time()))
+print(a)    # 2021
+
+# %Z - 시간대 출력
+a = time.strftime('%Z', time.localtime(time.time()))
+print(a)    # 대한민국 표준시
+
+# '%%' -문자
+a = time.strftime('%%', time.localtime(time.time()))
+print(a)    # %
+
+# %y - 세기부분을 제외한 년도 출력
+a = time.strftime('%y', time.localtime(time.time()))
+print(a)    # 21
+"""
+
+# 다음은 time.strftime을 사용하는 예이다.
+
+"""
+import time
+a = time.strftime('%x', time.localtime(time.time()))
+print(a)    # 03/23/21
+
+a = time.strftime('%c', time.localtime(time.time()))
+print(a)    # Tue Mar 23 09:17:01 2021
+"""
+
+
+# 6. time.sleep
+# time.sleep 함수는 주로 루프 안에서 많이 사용한다. 이 함수를 사용하면 일정한 시간 간격을 두고 루프를 실행할 수 있다. 다음 예를 보자.
+
+"""
+# sleep.py
+import time
+for i in range(10):
+    print(i)
+    time.sleep(1)
+"""
+# 위 예는 1초 간격으로 0부터 9까지의 숫자를 출력한다. 위 예에서 볼 수 있듯이 time.sleep 함수의 인수는 실수 형태를 쓸 수 있다. 
+# 즉 1이면 1초, 0.5명 0.5초가 되는 것이다.
+
+
+
+### calendar
+# calendar는 파이썬에서 달력을 볼 수 있게 해주는 모듈이다.
+# calendar.calendar(연도)로 사용하면 그해의 전체 달력을 볼 수 있다. 결괏값은 달력이 너무 길어 생략하겠다.
+
+"""
+import calendar
+print(calendar.calendar(2021))
+"""
+# calendar.prcal(연도)를 사용해도 위와 똑같은 결괏값을 얻을 수 있다. 
+# calendar 함수와 다른 점은 calendar는 달력 객체를 반환해주지만, prcal의 경우 출력을 해주며 반환값이 없다. 즉 print문을 안 써도 된다.
+"""
+calendar.prcal(2020)
+"""
+# 다음 예는 2015년 12월의 달력만 보여준다. 
+"""
+calendar.prmonth(2015, 12)
+"""
+
+
+# 1. calendar.weekday
+# calendar 모듈의 또 다른 유용한 함수를 찾아보자. weekday(연도, 월, 일) 함수는 그 날짜에 해당하는 요일 정보를 돌려준다. 
+# 월요일은 0, 화요일은 1, 수요일은 2, 목요일은 3, 금요일은 4, 토요일은 5, 일요일은 6이라는 값을 돌려준다.
+
+"""
+a = calendar.weekday(2015, 12, 31)
+print(a)    # 3, 목요일
+"""
+# 위 예에서 2015년 12월 31일은 목요일임을 보여준다.
+
+
+# 2. calendar.monthrange
+# monthrange(연도, 월) 함수는 입력받은 달의 1일이 무슨 요일인지와 그 달이 며칠까지 있는지를 튜플 형태로 돌려준다.
+"""
+a = calendar.monthrange(2015, 12)
+print(a)    # (1, 31) 1 - 2015년 12월 1일 목요일, 31 - 2015년 12월은 31일까지 있음
+"""
+
+# 위 예는 2015년 12월 1일은 화요일이고, 이 달은 31일까지 있다는 것을 보여 준다.
+# 날짜와 관련된 프로그래밍을 할 때 위 2가지 함수는 매우 유용하게 사용된다.
+
+
+
+### random
+# random은 난수(규칙이 없는 임의 수)를 발생시키는 모듈이다. random과 randint에 대해 알아보자.
+# 다음은 0.0에서 1.0 사이의 실수 중에서 난수 값을 돌려주는 예를 보여준다.
+
