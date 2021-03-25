@@ -406,3 +406,48 @@ print(a)    # (1, 31) 1 - 2015년 12월 1일 목요일, 31 - 2015년 12월은 31
 # random은 난수(규칙이 없는 임의 수)를 발생시키는 모듈이다. random과 randint에 대해 알아보자.
 # 다음은 0.0에서 1.0 사이의 실수 중에서 난수 값을 돌려주는 예를 보여준다.
 
+import random
+a = random.random()
+print(a)    # 0.0 ~ 1.0 사이의 실수 중에서 난수(범위 내 무작위로 추출된 수) 값을 돌려줌
+
+# 다음 예는 1에서 10 사이의 정수 중에서 난수 값을 돌려준다.
+
+a = random.randint(1, 10)    # randit(범위1, 범위2)
+print(a)    # 1 ~ 10 사이의 정수 중 난수 값을 돌려줌
+
+# 다음 예는 1에서 55 사이의 정수 중에서 난수 값을 돌려준다.
+a = random.randint(1, 55)
+print(a)    # 1 ~ 55 사이의 정수 중 난수 값을 돌려줌
+
+# random 모듈을 사용해서 재미있는 함수를 하나 만들어 보자.
+
+"""
+import random
+
+def random_pop(data):
+    number = random.randint(0, len(data)-1)
+    return data.pop(number)
+
+if __name__ == "__main__":
+    data = [1, 2, 3, 4, 5]
+    while data:
+        print(random_pop(data))
+"""
+
+# 위 random_pop 함수는 리스트의 요소 중에서 무작위로 하나를 선택하여 꺼낸 다음 그 값을 돌려준다. 
+# 물론 꺼낸 요소는 pop 메서드에 의해 사라진다.
+
+# random_pop 함수는 random 모듈의 choice 함수를 사용하여 다음과 같이 좀 더 직관적으로 만들 수도 있다.
+
+def random_pop(data):
+    number = random.choice(data)
+    data.remove(number)
+    return number
+# random.choice 함수는 입력으로 받은 리스트에서 무작위로 하나를 선택하여 돌려준다.
+
+# 리스트의 항목을 무작위로 섞고 싶을 때는 random.shuffle 함수를 사용하면 된다.
+
+import random
+data = [1, 2, 3, 4, 5]
+random.shuffle(data)
+print(data)    # [1, 2, 3, 4, 5] 리스트 중에서 랜덤한 값을 출력
