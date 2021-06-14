@@ -348,7 +348,7 @@ Quiz) 사이트별로 비밀번호를 만들어 주는 프로그램을 작성하
                             (nav)     (5)               (1)        (!)
 예) 생성된 비밀번호: nav51!
 '''
-
+'''
 url = "http://youtube.com"
 # rule1 = url[7:]    # 내꺼
 rule1 = url.replace("http://", "")    # 정답
@@ -361,3 +361,121 @@ password = rule2[:3] + str(len(rule2)) + str(rule2.count("e")) + "!"    # 정답
 # print(rule3)
 print(password)
 print("{0}의 비밀번호는 {1}입니다.".format(url, password))
+'''
+
+
+
+
+
+### 5-1 리스트
+
+# 지하철 칸별로 10명, 20명, 30명
+'''
+subway1 = 10
+subway2 = 20
+subway3 = 30
+
+subway = [10, 20, 30]
+print(subway)
+
+subway = ["유재석", "조세호", "박명수"]
+print(subway)
+'''
+
+'''
+# 조세호씨가 몇 번째 칸에 타고 있는가?
+subway = ["유재석", "조세호", "박명수"]
+print(subway.index("조세호"))
+# 하하씨가 다음 정류장에서 다음 칸에 탐
+subway.append("하하")    # append => 리스트에 값을 추가 하는 것
+print(subway)
+# 정형돈씨를 유재석 / 조세호 사이에 태움
+subway.insert(1, "정형돈")
+print(subway)
+# 지하철에 있는 사람을 한 명씩 뒤에서 꺼냄
+print(subway.pop())    # pop 함수로 리스트 마지막 값을 뺄 수 있음
+print(subway)
+
+# print(subway.pop()) 
+# print(subway)
+
+# print(subway.pop()) 
+# print(subway)
+
+
+# 같은 이름의 사람이 몇 명 있는지 확인
+subway.append("유재석")
+print(subway)
+print(subway.count("유재석"))
+'''
+
+# 정렬도 가능
+# num_list = [5, 2, 4, 3, 1]
+# num_list.sort()    # 오름차순으로 정렬
+# print(num_list)
+
+# # 순서 뒤집기
+# num_list.reverse()
+# print(num_list)
+
+# # 모두 지우기
+# num_list.clear()
+# print(num_list)
+
+# # 다양한 자료형 함께 사용
+# num_list = [5, 2, 4, 3, 1]
+# mix_list = ["조세호", 20, True]
+# # print(mix_list)
+
+# # 리스트 확장
+# num_list.extend(mix_list)    # extend 함수를 사용하여 두 리스트를 합칠 수 있음
+# print(num_list)
+
+
+
+
+### 5-2 사전 (Dictionary)
+'''
+cabinet = {3:"유재석", 100:"김태호"}     # {key:value} 형태
+# print(cabinet[3])    # 딕셔너리에서 키를 넣을 때, [대가로]를 사용
+# print(cabinet[100])
+
+# print(cabinet.get(3))
+
+# print(cabinet[5])    # 5라는 키값이 없기 때문에 에러 출력 후 종료
+# print(cabinet.get(5))    # get을 사용할 때 값이 없으면 none이라는 값이 출력됨.
+# print(cabinet.get(5, "사용 가능"))
+
+# print(3 in cabinet)    # 3이라는 키값이 cabinet 변수에 존재하므로 True 반환
+# print(5 in cabinet)    # 5라는 키값이 cabinet 변수에 없으므로 False 반환
+
+cabinet = {"A-3": "유재석", "B-100": "김태호"}    # 키 값에 문자열도 입력 가능
+print(cabinet["A-3"])
+print(cabinet["B-100"])
+
+# 새손님
+print(cabinet)
+cabinet["A-3"] = "김종국"    # 기존값을 업데이트(수정)하는 것
+cabinet["C-20"] = "조세호"    # 새로운 값을 추가 하는 것
+print(cabinet)
+
+
+
+# 간 손님
+del cabinet["A-3"]    # del을 사용하면 리스트 값을 삭제할 수 있음
+print(cabinet)
+
+# key만 출력
+print(cabinet.keys())
+# value들만 출력
+print(cabinet.values())
+# key, value 쌍으로 출력
+print(cabinet.items())
+
+# 목욕탕 폐점
+cabinet.clear()
+print(cabinet)
+'''
+
+
+### 5-3 튜플
