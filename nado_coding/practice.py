@@ -479,3 +479,156 @@ print(cabinet)
 
 
 ### 5-3 튜플
+
+'''
+menu = ("돈까스", "치즈까스")
+
+print(menu[0])
+print(menu[1])
+
+# menu.add("생선까스")    # 튜플은 add를 지원하지 않음
+
+# name = "김종국"
+# age = 20
+# hobby = "코딩"
+# print(name, age, hobby)
+
+(name, age, hobby) = ("김종국", 20, "코딩")
+print(name, age, hobby)
+'''
+
+
+
+### 5-4 세트
+
+'''
+# set (집합). 중복 안됨, 순서 없음.
+# my_set = {1, 2, 3, 3, 3}    # set에서는 중가로만 쓰면됨
+# print(my_set)
+java = {"유재석", "김태호", "양세형"}
+python = set(["유재석", "박명수"])
+
+# 교집합 - java와 python을 모두 할 수 있는 개발자.
+print(java & python)    # & 교집합
+print(java.intersection(python))    # interserction 교집합
+
+# 합칩합 - java도 할 수 있거나 python을 할 수 있는 개발자.
+print(java | python)    # | 교집합
+print(java.union(python))    # union 교집합
+
+# 차집합 - java는 할 수 있지만 python을 할 수 없는 개발자
+print(java - python)    # - 차집합
+print(java.difference(python))    # difference 차집합
+
+# python 할 줄 아는 사람이 늘어남
+python.add("김태호")
+print(python)
+
+# java를 까먹음
+java.remove("김태호")
+print(java)
+'''
+
+
+
+### 5-5 자료 구조의 변경
+
+'''
+# 커피숍
+menu = {"커피", "우유", "주소"}
+# print(menu)
+print(menu, type(menu))    # type을 넣으면 클래스가 출력
+
+menu = list(menu)
+print(menu, type(menu))
+
+menu = tuple(menu)
+print(menu, type(menu))
+
+menu = set(menu)
+print(menu, type(menu))
+'''
+
+
+
+### 5-6 퀴즈 #4
+
+'''
+Quiz) 당신의 학교에서는 파이썬 코딩 대회를 주최합니다.
+참석률을 높이기 위해 댓글 이벤트를 진행하기로 하였습니다.
+댓글 작성자들 중에 추첨을 통해 1명은 치킨, 3명은 커피 쿠폰을 받게 됩니다.
+추첨 프로그램을 작성하시오.
+
+조건1 : 편의상 댓글은 20명이 작성하였고, 아이디는 1~20 이라고 가정
+조건2: 댓글 내용과 상관 없이 무작위로 추첨하되 중복 불가
+조건3 : random 모듈의 shuffle과 sample을 활용
+
+(출력 예제)
+-- 당첨자 발표 --
+치킨 당첨자 : 1
+커피 당첨자 : [2, 3, 4]
+-- 축하합니다 --
+
+(활용 예제)
+from random import *
+1st = [1, 2, 3, 4, 5]
+print(1st)
+shuffle(1st)
+print(1st)
+print(sample(1st, 1))
+'''
+
+'''    실패의 나의 정답
+from random import *
+lst = [1, 2, 3, 4, 5]
+# print(lst)
+# shuffle(lst)
+# print(lst)
+print(sample(lst, 1))
+
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+shuffle(lst)
+chicken = sample(lst, 1)
+lst.remove(chicken)
+coffee1 = sample(lst, 1)
+lst.remove(coffee1)
+coffee2 = sample(lst, 1)
+lst.remove(coffee2)
+coffee3 = sample(lst, 1)
+lst.remove(coffee3)
+coffee = coffee1 + coffee2 + coffee3
+print("""
+-- 당첨자 발표 --
+치킨 당첨자 : {chicken}
+커피 당첨자 : {coffee}
+-- 축하합니다 --
+""" .format(chicken = chicken, coffee = coffee))
+'''
+
+'''
+# 교재 정답
+from random import *
+
+users = range(1, 21)    # 1부터 20까지 숫자를 생성
+# print(type(users))
+users = list(users)
+# print(type(users))
+
+print(users)
+shuffle(users)
+print(users)
+
+winners = sample(users, 4)     # 4명 중에 1명은 치킨, 3명은 커피
+
+print(" -- 당첨자 발표 -- ")
+print("치킨 당첨자: {0}".format(winners[0]))
+print("커피 당첨자: {0}".format(winners[1:]))
+print(" -- 축하 합니다 --")
+'''
+
+
+
+
+
+### 6-1 if
