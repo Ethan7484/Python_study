@@ -632,3 +632,129 @@ print(" -- 축하 합니다 --")
 
 
 ### 6-1 if
+
+'''
+# weather = "비"
+weather = "맑음"
+
+if 조건:
+    실행 명령문
+
+
+if weather == "비":
+    print("우산을 챙기세요.")
+    # weather가 "맑음"이기 때문에 조건에 맞지 않아 실행되지 않음.
+'''
+
+'''
+# weather = "비"
+# weather = "미세먼지"
+# weather = "맑아요"
+weather = input("오늘 날씨는 어때요? ")
+
+
+if weather == "비":
+    print("우산을 챙기세요.")
+elif weather == "미세먼지":
+    print("마스크를 챙기세요.")
+else:    # 조건을 모두 만족하지 않는 경우
+    print("준비물 필요 없어요.")
+'''
+
+'''
+weather = input("오늘 날씨는 어때요? ")
+
+if weather == "비" or weather == "눈":
+    print("우산을 챙기세요.")
+elif weather == "미세먼지":
+    print("마스크를 챙기세요.")
+else:    # 조건을 모두 만족하지 않는 경우
+    print("준비물 필요 없어요.")
+'''
+
+'''
+temp = int(input("기온은 어때요? "))
+
+if 30 <= temp:
+    print("너무 더워요. 나가지 마세요.")
+elif 10 <= temp and temp <30:
+    print("괜찮은 날씨에요")
+elif 0 <= temp <10:
+    print("외투를 챙기세요.")
+else:
+    print("너무 추워요 나가지 마세요.")
+'''
+
+
+
+
+### 6-2 for
+
+'''
+print("대기번호 : 1")
+print("대기번호 : 2")
+print("대기번호 : 3")
+print("대기번호 : 4")
+'''
+
+'''
+for waiting_no in [0, 1, 2, 3, 4]:
+    print("대기번호: {0}" .format(waiting_no))
+'''
+
+'''
+for waiting_no in range(5):    # range(5) = 0, 1, 2, 3, 4
+    print("대기번호: {0}" .format(waiting_no))
+
+for waiting_no in range(1, 6):    
+    print("대기번호: {0}" .format(waiting_no))
+'''
+
+'''
+starbucks = ["아이언맨", "토르", "그루트"]
+
+for customer in starbucks:
+    print("{0}, 커피가 준비되었습니다. " .format(customer))
+'''
+
+
+
+
+
+
+### 6-3 while
+
+'''
+customer = "토르"
+index = 5
+
+while index >= 1:
+    print("{0}, 커피가 준비되었습니다. {1} 번 남았어요. " .format(customer, index))
+    index -= 1
+    if index == 0:
+        print("커피는 폐기처분 되었습니다.")
+'''
+
+'''
+customer = "아이언맨"
+index = 1
+while True:
+    print("{0}, 커피가 준비 되었습니다. 호출 {1} 회" .format(customer, index))
+    index += 1
+'''
+
+'''
+customer = "토르"
+person = "Unknown"
+
+while person != customer :
+    print("{0}, 커피가 준비 되었습니다. " .format(customer))
+    person = input("이름이 어떻게 되세요?")
+'''
+
+
+
+
+
+
+### 6-4 countinue 와 break
