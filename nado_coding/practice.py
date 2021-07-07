@@ -421,10 +421,10 @@ print(subway.count("유재석"))
 # # 모두 지우기
 # num_list.clear()
 # print(num_list)
-
 # # 다양한 자료형 함께 사용
 # num_list = [5, 2, 4, 3, 1]
 # mix_list = ["조세호", 20, True]
+
 # # print(mix_list)
 
 # # 리스트 확장
@@ -758,3 +758,18 @@ while person != customer :
 
 
 ### 6-4 countinue 와 break
+
+'''
+absent = [3, 5]    # 결석
+for student in range(1, 11):    # 1번부터 10번까지 학생
+    if student in absent:
+        continue
+    print("{0}, 책을 읽어봐" .format(student))
+'''
+
+
+absent = [10, 16]    # 결석
+for student in range(1, 16):
+    if student in absent:
+        break
+    print("{0}, 책 읽어봐" .format(student))
