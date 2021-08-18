@@ -768,8 +768,16 @@ for student in range(1, 11):    # 1번부터 10번까지 학생
 '''
 
 
-absent = [10, 16]    # 결석
+absent = [10, 16]    # 결석555
 for student in range(1, 16):
     if student in absent:
         break
     print("{0}, 책 읽어봐" .format(student))
+    
+    
+    
+
+
+ㅁㄴㅇㅁㄴㅇ
+ㅇㅁㄴㅇㅁㄴㅇ
+ㅇㅁㄴㅇㅁㄴㅇㅁ
