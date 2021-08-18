@@ -222,5 +222,4 @@ print(math.sqrt(64))
 # 무작위로 어떤 수를 뽑아주는 random 모듈이 있음. 
 
 from random import *    # random 모듈에서 모든 것을 가져다 쓰겠다는 의미
-
-
+aaaaaggggggg
