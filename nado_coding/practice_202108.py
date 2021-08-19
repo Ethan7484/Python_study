@@ -221,5 +221,26 @@ print(math.sqrt(64))
 
 # 무작위로 어떤 수를 뽑아주는 random 모듈이 있음. 
 
+'''
 from random import *    # random 모듈에서 모든 것을 가져다 쓰겠다는 의미
-aaaaaggggggg
+print(random())    # 0.0 이상 1.0 미만의 임의 값 생성
+print(int(random() * 10))    # 0이상 10미만의 임의 값 생성
+print(int(random() * 10) + 1)    # 1이상 11미만의 임의 값 생성
+'''
+
+'''
+# 로또 번호 뽑기 (1 ~ 45)
+print(int(random() * 45) + 1)    # 1이상 46미만의 임의의 정수 값 생성
+'''
+
+'''
+하지만 매번 이렇게 계산하기 번거로움. 그래서 파이썬에서 좋은 방법을 제시함.
+randrange | 주어진 범위 내에서 임의의 정수 값 생성 | randrange(1, 46)
+randint | 주어진 범위 내의 임의의 정수 값 생성(마지막 값 포함) | randint(1, 45)
+'''
+
+'''
+from random import *
+print(randrange(1, 46))
+print(randint(1, 45))
+'''
