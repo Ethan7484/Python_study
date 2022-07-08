@@ -239,11 +239,11 @@ randrange | 주어진 범위 내에서 임의의 정수 값 생성 | randrange(1
 randint | 주어진 범위 내의 임의의 정수 값 생성(마지막 값 포함) | randint(1, 45)
 '''
 
-'''
+
 from random import *
 print(randrange(1, 46))
 print(randint(1, 45))
-'''
+
 
 
 
