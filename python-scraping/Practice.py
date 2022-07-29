@@ -42,13 +42,22 @@ print(bs.div)
 
 
 
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-html = urlopen('http://pythonscraping.com/pages/page1.html')
-bs = BeautifulSoup(html.read(), 'html.parser')
-bs = BeautifulSoup(html, 'html.parser')
-bs = BeautifulSoup(html, 'lxml')    # 구문분석기 lxml 사용
+# from urllib.request import urlopen
+# from bs4 import BeautifulSoup
+# html = urlopen('http://pythonscraping.com/pages/page1.html')
+# bs = BeautifulSoup(html.read(), 'html.parser')
+# bs = BeautifulSoup(html, 'html.parser')
+# bs = BeautifulSoup(html, 'lxml')    # 구문분석기 lxml 사용
 
 
 # print(bs.nonExistientTag)
-print(bs.nonExistentTag.someTag)
+# print(bs.head)
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html = urlopen('https://www.data.ai/intelligence/top-apps/store-rank/gp?date=%272022-07-13%27&country_code=KR&category_id=400001&product_id_meta=!(product_id.category_id)&chart.event_bubble.event_types=!(artwork_url_change,app_description,name_change,new_version,price_change,screenshot_change,app_company_id_change)&granularity=daily&store_rank_gp_chart_grossing$previous_range$chart_compare_facets=!(store_product_rank_free__aggr)&store-rank.gp.view=grossing&store-rank.gp.rank-type=leaderboard&store_rank.gp.chart_range=30&table_display=table')
+
+bs = BeautifulSoup(html.read(), 'html.parser')
+
+
+print(bs.div)
